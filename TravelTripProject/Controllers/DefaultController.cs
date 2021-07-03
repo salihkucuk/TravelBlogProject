@@ -24,7 +24,23 @@ namespace TravelTripProject.Controllers
 
         public PartialViewResult Partial1()
         {
-            return PartialView();
+            var degerler = c.Blogs.OrderByDescending(x => x.ID).Take(2).ToList();
+            return PartialView(degerler);
+        }
+        public PartialViewResult Partial2()
+        {
+            var deger = c.Blogs.Where(x => x.ID==1).ToList();
+            return PartialView(deger);
+        }
+        public PartialViewResult Partial3()
+        {
+            var deger = c.Blogs.ToList();
+            return PartialView(deger);
+        }
+        public PartialViewResult Partial4()
+        {
+            var deger = c.Blogs.ToList();
+            return PartialView(deger);
         }
 
 
